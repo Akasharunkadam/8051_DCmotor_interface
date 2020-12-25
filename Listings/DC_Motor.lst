@@ -1,0 +1,41 @@
+C51 COMPILER V9.60.0.0   DC_MOTOR                                                          10/06/2020 10:43:53 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DC_MOTOR
+OBJECT MODULE PLACED IN .\Objects\DC_Motor.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\DC_Motor.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listin
+                    -gs\DC_Motor.lst) TABS(2) OBJECT(.\Objects\DC_Motor.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit motp=P1^0;
+   3          sbit motn=P1^1;
+   4          void main()
+   5          {
+   6   1        unsigned int i;
+   7   1        motp=motn=0;
+   8   1        while(1)
+   9   1        {
+  10   2          motp=1;//clockwise
+  11   2          motn=0;
+  12   2          for(i=0; i<=50000; i++);
+  13   2          motp=0;
+  14   2          motn=1;  //anticlockwise
+  15   2          for(i=0; i<=50000; i++);
+  16   2        }
+  17   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     64    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
